@@ -1,0 +1,25 @@
+<odoo>
+  <data>
+    <record id="fields_report_cot" model="ir.ui.view">
+      <field name="name">Fields.Report.Cot</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='user_id']" position="after">
+          <field name="cargo_envio"/>
+          <field name="instalacion"/>
+          <field name="tiempo_entrega"/>
+          <field name="forma_pago"/>
+        </xpath>
+        <!--CAMPOS DE INFORMACION PARA LA VENTA-->
+        <xpath expr="//group[@name='technical']" position="after">
+          <group string="Acerca de la venta" name="info_sale">
+            <field name="pago_importacion"/>
+            <field name="tiempo_entrega"/>
+            <field name="nota_venta" readonly="1"/>
+          </group>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

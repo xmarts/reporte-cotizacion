@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<data>
+ <template id="design_report_invoice" inherit_id="web.external_layout_standard">
+      <xpath expr="//div[hasclass('header')]" position="replace">
+        <div class="header">
+          <table style="border-top: 8px solid #f36306;">
+                <tr>
+                    <td style="width:50%;">
+                        <div style="text-align:center;border:1px solid;">
+                             <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" alt="Logo"/>
+                        </div>
+                    </td> 
+                    <td style="height:50%; vertical-align: bottom; padding: 15px; background-color:#f1efee;">
+                        <div class="row">
+                            <div name="company_address">
+                                <div class="col-md-6" t-field="company.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>
+                            </div>
+                        </div>
+                     </td>
+                     <tr>
+                        <td style="width:50%;background-color:#f36306;color:#fff;border-right:2px solid #fff;  padding:5px; text-align-last: center; font-size:18pt; vertical-align: bottom; padding-bottom:50px;">
+                            <h2>
+                                <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
+                                    <span t-if="doc.state not in ['draft','sent']">Order # </span>
+                                    <span t-if="doc.state in ['draft','sent']">Quotation # </span>
+                                        </t>
+                                            <t t-if="env.context.get('proforma', False) or is_pro_forma">
+                                                <span>Pro-Forma Invoice # </span>
+                                        </t>
+                                    <span t-field="doc.name"/>
+                            </h2> 
+                        </td>
+                        <td style="background-color:#f36306;color:#fff;border-left:2px solid #fff;padding:5px;font-size:8pt;font-weight: 600;border:1px solid; vertical-align: bottom;">
+                            <t t-call="web.address_layout"/>
+                        </td>
+                     </tr>
+                </tr>
+          </table>
+        </div> 
+      </xpath>
+    </template>
+    
+    <template id="fields_news" inherit_id="sale.report_saleorder_document">
+      <xpath expr="//div[hasclass('page')]/div[2]" position="after">
+         <div id="more_info" style="margin-top:-25px;padding-bottom:10px;" class="row"> 
+        
+            <div   style="float:left; text-align:left;">
+                <div t-if="doc.cargo_envio" class="col-auto mw-100 mb-2">
+                    <strong>Cargo de envio:</strong>
+                        <span>
+                            <span class="m-0" t-field="doc.cargo_envio"/>
+                        </span> 
+                </div>
+                <div t-if="doc.instalacion" class="col-auto mw-10o mb-2">
+                    <strong>Instalacion:</strong>
+                        <span>
+                            <span class="m-0" t-field="doc.instalacion"/>
+                        </span> 
+                </div>
+            </div>
+            
+            <div style="float:right; text-align:center;">
+                <div t-if="doc.tiempo_entrega" class="col-auto mw-100 mb-2">
+                    <strong>Tiempo de entrega:</strong>
+                        <span>
+                          <span class="m-0" t-field="doc.tiempo_entrega"/>
+                        </span> 
+                </div>
+                <div t-if="doc.forma_pago" class="col-auto mw-100 mb-2" >
+                    <strong>Forma de pago:</strong>
+                        <span>
+                            <span class="m-0" t-field="doc.forma_pago"/>
+                        </span> 
+                </div>
+            </div>
+        </div>
+      </xpath>
+    </template>
+
+
+    <template id="fields_news_inferior" inherit_id="sale.report_saleorder_document">
+      <xpath expr="//div[hasclass('page')]/div[5]" position="after">
+        <div style=" margin-top:50px">
+            <h3> Condiciones de venta </h3>
+                <ul class="list-inline mb4">
+                    <li t-if="doc.pago_importacion" class="list-inline-item">Pago importacion: <span t-field="doc.pago_importacion"/></li>
+                </ul>
+                <ul class="list-inline mb4">
+                    <li t-if="doc.tiempo_entrega" class="list-inline-item">Tiempo de entrega: <span t-field="doc.tiempo_entrega"/></li>
+                </ul>
+                 <ul class="list-inline mb4">
+                    <li t-if="doc.nota_venta" class="list-inline-item">Nota: <span t-field="doc.nota_venta"/></li>
+                </ul>
+                
+
+            </div>
+      </xpath>
+    </template>
+
+
+
+  </data>
