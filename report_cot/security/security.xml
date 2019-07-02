@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- DEGREES-->
+        <!-- Acusmata-->
+        <record id="group_pyth_disciple" model="res.groups">
+            <field name="name">Comentarios</field>
+            <field name="comment">Comentarios de venta</field>
+        </record>
+    </data>
+</odoo>

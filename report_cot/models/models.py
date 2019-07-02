@@ -14,9 +14,9 @@ class ReportCot(models.Model):
 	forma_pago = fields.Char(string="Forma de pago")
 	#------------------------------------------------------#
 	pago_importacion = fields.Char(string="En los productos de importacion y fabricacion el pago sera")
-	tiempo_entrega = fields.Char(string="Tiempo de entrega")
+	
 	nota_venta = fields.Char(string="Nota", default="Precios sujetos a cambio sin previo aviso")
-
+	comentarios = fields.Char(string="Comentarios")
 
 class ReportCot(models.Model):
 	_inherit = "sale.order.line"
@@ -28,3 +28,8 @@ class ReportCot(models.Model):
 	def _compute_product_cantidad(self):
 		for line in self:
 			line.price_product_cantidad = line.product_uom_qty * line.price_unit
+
+class notas(models.Model):
+	_name = "notas.cotizacion"
+
+	
