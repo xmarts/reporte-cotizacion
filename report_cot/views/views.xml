@@ -45,46 +45,7 @@
             <field name="comentarios"/>
           </page>
         </xpath>
-
-       <!-- <record id="fields_report_cot" model="ir.ui.view">
-      <field name="name">Fields.Report.Cot</field>
-      <field name="model">sale.order</field>
-      <field name="inherit_id" ref="sale.view_order_form"/>
-      <field name="arch" type="xml">
-        <xpath expr="//field[@name='user_id']" position="after">
-          <field name="cargo_envio"/>
-          <field name="instalacion"/>
-          <field name="tiempo_entrega"/>
-          <field name="forma_pago"/>
-        </xpath>
-
-        <xpath expr="//group[@name='technical']" position="after">
-          <group string="Acerca de la venta" name="info_sale">
-            <field name="pago_importacion"/>
-            <field name="tiempo_entrega"/>
-            <field name="nota_venta" readonly="1"/>
-          </group>
-        </xpath>
-        <xpath expr="//field[@name='partner_id']" position="before">
-            <field name="proyecto"/>
-            
-        </xpath>
-         <xpath expr="//field[@name='partner_id']" position="after">
-            <field name="observaciones"/>
-            
-        </xpath>
-        <xpath expr="//notebook/page/field[@name='order_line']/tree/field[@name='name']" position="after">
-            <field name="tiempo_entrega"/>
-            
-        </xpath>
-        <xpath expr="//page[@name='other_information']" position="after">
-          <page string="Comentarios" name="comentarios" groups="sales_team.group_sale_manager">
-            <field name="comentarios"/>
-            </page>
-        </xpath>
       </field>
-    </record>
-      </field>-->
     </record>
   </data>
 </odoo>
