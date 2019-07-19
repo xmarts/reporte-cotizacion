@@ -47,6 +47,12 @@
                                     </t>
                                 </td>
                                 <td>
+                                    <t t-if="doc.instalacion"  >
+                                        <strong>Instalación:</strong>                     
+                                        <p t-field="doc.instalacion"/>         
+                                    </t>
+                                </td>
+                                <td>
                                     <t t-if="doc.proyecto" >
                                         <strong style="font-size:23px;">Proyecto:</strong>
                                         <p style="font-size:23px;" t-field="doc.proyecto"/>
@@ -56,7 +62,7 @@
                             <tr>
                                 <td>
                                     <t t-if="doc.tiempo_entrega"  >
-                                        <strong>Tiempo de entrega:</strong>                                     
+                                        <strong>Tiempo de entrega:</strong>                                 
                                         <p t-field="doc.tiempo_entrega"/>                                        
                                     </t>
                                 </td>
@@ -67,7 +73,7 @@
                                     </t>
                                 </td>
                                 <td>
-                                    <t >
+                                    <t t-if="doc.user_id.login">
                                         <strong>Email Comercial:</strong>
                                         <p t-field="doc.user_id.login"/>
                                     </t> 

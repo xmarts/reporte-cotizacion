@@ -8,8 +8,20 @@ class ReportCot(models.Model):
 	proyecto = fields.Char(string="Proyecto")
 	observaciones =fields.Text(string="Observaciones")
 	#
-	cargo_envio = fields.Char(string="Cargo por envio")
-	instalacion = fields.Char(string="Instalacion")
+	cargo_envio = fields.Selection(selection=[
+		('type1', 'Envio por cobrar'),
+		('type2', 'Flete contrado'),
+		('type3', 'Por parte del cliente'),
+		('type4', 'Por confirmar'),
+		('type5', 'Otros'),
+		('type6', 'Gratis ZMG'),
+		('type7', 'Gratis ZMCDMX'),
+		('type8', 'Gratis ZMMERIDA'),], string="Cargo de envio", default='type1')
+	instalacion = fields.Selection(selection=[
+		('type1', 'Por parte del cliente'),
+		('type2', 'Cotizado'),
+		('type3', 'Por confirmar'),
+		('type4', 'Otros'),], string="Instalación", default='type1')
 	tiempo_entrega = fields.Char(string="Tiempo de entrega")
 	forma_pago = fields.Char(string="Forma de pago")
 	#------------------------------------------------------#
