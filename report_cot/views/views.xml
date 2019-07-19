@@ -5,7 +5,11 @@
       <field name="model">sale.order</field>
       <field name="inherit_id" ref="sale.view_order_form"/>
       <field name="arch" type="xml">
-        <xpath expr="//form/sheet/group[1]" position="replace">
+        <xpath expr="//field[@name='partner_id']" position="after">
+          <field name="cargo_envio"/>
+          <field name="instalacion"/>
+        </xpath>
+        <!--<xpath expr="//form/sheet/group[1]" position="replace">
           <group>
             <group>
               <field name="partner_id" widget="res_partner_many2one" domain="[('customer','=',True)]" context="{'search_default_customer':1, 'show_address': 1, 'show_vat': True, 'show_email':1}" options='{"always_reload": True}' string="Razón social"/>
@@ -44,7 +48,7 @@
           <page string="Comentarios" name="comentarios" groups="sales_team.group_sale_manager">
             <field name="comentarios"/>
           </page>
-        </xpath>
+        </xpath>-->
       </field>
     </record>
   </data>
