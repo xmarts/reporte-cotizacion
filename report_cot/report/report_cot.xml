@@ -18,7 +18,7 @@
 
                         <table style="width:100%;">
                             <tr>
-                                <td>
+                                <!--<td>
                                     <div class = 'col-xs-6 text-left'> 
                                         <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)"/>
                                         <div t-field="doc.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True}"/>
@@ -33,19 +33,20 @@
                                             </t>
                                         </t>
                                     </div>   
-                                </td>
+                                </td>-->
                                 <td>
                                     <t t-if="doc.cargo_envio"  >
                                         <strong>Cargo por envio:</strong>                                 
                                         <p t-field="doc.cargo_envio"/>
                                     </t>
                                 </td>
+                                <!--
                                 <td>
                                     <t t-if="doc.invoice_status"  >
                                         <strong>Domicilio de instalacion:</strong>                                    
                                         <p t-field="doc.invoice_status"/>                                       
                                     </t>
-                                </td>
+                                </td>-->
                                 <td>
                                     <t t-if="doc.instalacion"  >
                                         <strong>Instalación:</strong>                     
@@ -82,9 +83,9 @@
                                     <t t-foreach="doc.partner_id.child_ids" t-as="o">
                                         <p>
                                             <t t-if="o.type == 'contact'">
-                                                <b>Contacto: </b><span t-field="o.name"/>
+                                                <b t-if="o.name">Contacto: </b><span t-field="o.name"/>
                                                 <br/>
-                                                <b>Email: </b><span t-field="o.email"/>
+                                                <b t-if="o.email">Email: </b><span t-field="o.email"/>
                                             </t>
                                         </p>
                                     </t>
