@@ -69,7 +69,7 @@
                                 </td>
                                 <td>
                                     <t t-if="doc.user_id"  >
-                                        <strong>Asesor Comercial:</strong>
+                                        <strong>Asesor:</strong>
                                         <p t-field="doc.user_id"/>
                                     </t>
                                 </td>
