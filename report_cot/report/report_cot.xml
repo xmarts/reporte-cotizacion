@@ -92,12 +92,7 @@
                                 </td>
                             </tr>
                         </table>
-                        <div class="col-lg-12">
-                            <t t-if="doc.observaciones" >
-                                <strong>Observaciones:</strong>
-                                <p t-field="doc.observaciones"/>    
-                            </t>
-                        </div>
+                        
                         <br/>
                         <br/>
                         <t t-set="display_discount" t-value="any([l.discount for l in doc.order_line])"/>
@@ -110,8 +105,7 @@
                                     <th class="text-left">Descripcion</th>
                                     <th class="text-left">Tiempo de entrega</th>
                                     <th class="text-right">Cantidad</th>
-                                   
-                                    <th class="text-right">Impuesto</th>
+                                    <!--<th class="text-right">Impuesto</th>-->
                                     <th class="text-right">Precio publico</th>
              
                                     <th class="text-right">
@@ -134,15 +128,15 @@
                                             <td><img t-if="line.product_id.image_medium" t-att-src="image_data_uri(line.product_id.image_medium)" style="width:100%;"/>
                                    </td>
                                             <td><span t-field="line.name"/></td>
-                                              <td><span t-field="line.tiempo_entrega"/></td>
+                                            <td><span t-field="line.tiempo_entrega"/></td>
                                             <td class="text-right">
                                                 <span t-field="line.product_uom_qty"/>
                                                 <span t-field="line.product_uom" groups="uom.group_uom"/>
                                             </td>
                                            
-                                            <td class="text-right">
+                                            <!--<td class="text-right">
                                                 <span t-esc="', '.join(map(lambda x: (x.description or x.name), line.tax_id))"/>
-                                            </td>
+                                            </td>-->
                                             <td class="text-right">
                                                 <span t-field="line.price_unit"/>
                                             </td>
@@ -226,7 +220,12 @@
                                 <br/>
                             </div>
                         </div>
-
+                        <div class="col-lg-12">
+                            <strong>Observaciones:</strong>
+                            <t t-foreach="doc.observaciones" t-as="line">
+                                <p><b t-field="line.name"/><span>: </span><span t-field="line.description"/></p>   
+                            </t>
+                        </div>
                         <p t-field="doc.note"/>
                         <p t-if="doc.payment_term_id.note">
                             <span t-field="doc.payment_term_id.note"/>

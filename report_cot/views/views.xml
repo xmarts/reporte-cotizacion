@@ -1,5 +1,6 @@
 <odoo>
   <data>
+
     <record id="fields_report_cot" model="ir.ui.view">
       <field name="name">Fields.Report.Cot</field>
       <field name="model">sale.order</field>
@@ -18,11 +19,11 @@
               <field name="payment_term_id" options="{'no_create': True}"/>
               <field name="cargo_envio"/>
               <field name="instalacion"/>
-              <field name="tiempo_entrega"/>
+              <field name="tiempo_entrega" widget="many2many_tags" options="{'no_create_edit': True}"/>
               <field name="forma_pago"/>
             </group>
             <group>
-              <field name="observaciones"/>
+              <field name="observaciones" widget="many2many_tags" options="{'no_create_edit': True}"/>
             </group>
           </group>
         </xpath>
@@ -37,7 +38,7 @@
           <field name="proyecto"/>
         </xpath>
         <xpath expr="//notebook/page/field[@name='order_line']/tree/field[@name='name']" position="after">
-          <field name="tiempo_entrega"/>
+          <field name="tiempo_entrega" widget="many2many_tags" options="{'no_create_edit': True}"/>
         </xpath>
 
         <xpath expr="//page[@name='other_information']" position="after">
