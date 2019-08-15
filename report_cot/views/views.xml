@@ -19,7 +19,7 @@
               <field name="payment_term_id" options="{'no_create': True}" string="Términos de pago"/>
               <field name="cargo_envio"/>
               <field name="instalacion"/>
-              <field name="tiempo_entrega" widget="many2many_tags" options="{'no_create_edit': True}"/>
+              <field name="entrega" widget="many2many_tags" options="{'no_create_edit': True}"/>
               <field name="forma_pago"/>
             </group>
             <group>

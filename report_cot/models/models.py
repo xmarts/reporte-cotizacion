@@ -43,7 +43,7 @@ class ReportCot(models.Model):
 		('type2', 'Cotizado'),
 		('type3', 'Por confirmar'),
 		('type4', 'Otros'),], string="Instalación", default='type1')
-	tiempo_entrega = fields.Many2many('tiempo.entrega', string="Tiempo de entrega")
+	entrega = fields.Many2many('tiempo.entrega', string="Tiempo de entrega")
 	forma_pago = fields.Char(string="Forma de pago")
 	observaciones =fields.Many2many('obser.sale', string="Observaciones")
 	pago_importacion = fields.Char(string="En los productos de importacion y fabricacion el pago sera")
