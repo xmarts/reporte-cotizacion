@@ -64,7 +64,7 @@
                                 <td>
                                     <t t-if="doc.tiempo_entrega"  >
                                         <strong>Tiempo de entrega:</strong>                                 
-                                        <p t-field="doc.tiempo_entrega"/>                                        
+                                        <p t-field="doc.entrega"/>                                        
                                     </t>
                                 </td>
                                 <td>
