@@ -128,7 +128,7 @@
                                             <td><img t-if="line.product_id.image_medium" t-att-src="image_data_uri(line.product_id.image_medium)" style="width:100%;"/>
                                    </td>
                                             <td><span t-field="line.name"/></td>
-                                            <td><span t-field="line.tiempo_entrega"/></td>
+                                            <td><span t-field="line.entrega"/></td>
                                             <td class="text-right">
                                                 <span t-field="line.product_uom_qty"/>
                                                 <span t-field="line.product_uom" groups="uom.group_uom"/>
