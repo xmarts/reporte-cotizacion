@@ -54,7 +54,7 @@ class ReportCot(models.Model):
 class ReportCot(models.Model):
 	_inherit = "sale.order.line"
 
-	entrega = fields.Many2many('tiempo.entrega', string="Tiempo de entrega")
+	entrega_tabla = fields.Many2many('tiempo.entrega', string="Tiempo de entrega")
 	price_product_cantidad = fields.Monetary(compute='_compute_product_cantidad', string='Subtotal', readonly=True, store=True)
 
 	@api.depends('price_unit', 'product_uom_qty')

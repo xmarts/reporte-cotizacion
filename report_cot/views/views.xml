@@ -38,7 +38,7 @@
           <field name="proyecto"/>
         </xpath>
         <xpath expr="//notebook/page/field[@name='order_line']/tree/field[@name='name']" position="after">
-          <field name="entrega" widget="many2many_tags" options="{'no_create_edit': True}"/>
+          <field name="entrega_tabla" widget="many2many_tags" options="{'no_create_edit': True}"/>
         </xpath>
 
         <xpath expr="//page[@name='other_information']" position="after">
