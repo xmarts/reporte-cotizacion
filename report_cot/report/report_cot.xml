@@ -61,13 +61,10 @@
                                 </td>
                             </tr>
                             <tr>
-
                                 <td>
-                                    <t t-if="doc.entrega"  >
-                                        <strong>Tiempo de entrega:</strong>
-                                        <t t-foreach="doc.entrega" t-as="line">
-                                            <p t-field="line.name"/>
-                                        </t>                                                              
+                                    <t t-if="doc.entrega_tiempo"  >
+                                        <strong>Tiempo entrega:</strong>
+                                        <p t-field="doc.entrega_tiempo"/>
                                     </t>
                                 </td>
                                 <td>
@@ -256,7 +253,7 @@
                                 <li t-if="doc.pago_importacion" class="list-inline-item">Pago importacion: <span t-field="doc.pago_importacion"/></li>
                             </ul>
                             <ul class="list-inline mb4">
-                                <li t-if="doc.entrega" class="list-inline-item">Tiempo de entrega: <span t-field="doc.entrega"/></li>
+                                <li t-if="doc.entrega_tiempo" class="list-inline-item">Tiempo de entrega: <span t-field="doc.entrega_tiempo"/></li>
                             </ul>
                              <ul class="list-inline mb4">
                                 <li t-if="doc.nota_venta" class="list-inline-item">Nota: <span t-field="doc.nota_venta"/></li>
