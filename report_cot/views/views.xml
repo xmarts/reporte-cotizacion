@@ -16,10 +16,10 @@
               <field name="confirmation_date" attrs="{'invisible': [('state', 'in', ['draft', 'sent', 'cancel'])]}"/>
               <field name="pricelist_id" groups="product.group_sale_pricelist"/>
               <field name="currency_id" invisible="1"/>
-              <field name="payment_term_id" options="{'no_create': True}"/>
+              <field name="payment_term_id" options="{'no_create': True}" string="Términos de pago"/>
               <field name="cargo_envio"/>
               <field name="instalacion"/>
-              <field name="entrega_tiempo" widget="many2many_tags" options="{'no_create_edit': True}"/>
+              <field name="tiempo_entrega" widget="many2many_tags" options="{'no_create_edit': True}"/>
               <field name="forma_pago"/>
             </group>
             <group>
@@ -38,7 +38,7 @@
           <field name="proyecto"/>
         </xpath>
         <xpath expr="//notebook/page/field[@name='order_line']/tree/field[@name='name']" position="after">
-          <field name="entrega_tabla" widget="many2many_tags" options="{'no_create_edit': True}"/>
+          <field name="tiempo_entrega_tabla" widget="many2many_tags" options="{'no_create_edit': True}"/>
         </xpath>
 
         <xpath expr="//page[@name='other_information']" position="after">

@@ -43,7 +43,7 @@ class ReportCot(models.Model):
 		('type2', 'Cotizado'),
 		('type3', 'Por confirmar'),
 		('type4', 'Otros'),], string="Instalación", default='type1')
-	entrega_tiempo = fields.Many2many('tiempo.entrega', string="Tiempo de entrega")
+	tiempo_entrega = fields.Many2many('tiempo.entrega', string="Tiempo de entrega")
 	forma_pago = fields.Char(string="Forma de pago")
 	observaciones =fields.Many2many('obser.sale', string="Observaciones")
 	pago_importacion = fields.Char(string="En los productos de importacion y fabricacion el pago sera")
@@ -54,7 +54,7 @@ class ReportCot(models.Model):
 class ReportCot(models.Model):
 	_inherit = "sale.order.line"
 
-	entrega_tabla = fields.Many2many('tiempo.entrega', string="Tiempo de entrega")
+	tiempo_entrega_tabla = fields.Many2many('tiempo.entrega', string="Tiempo de entrega")
 	price_product_cantidad = fields.Monetary(compute='_compute_product_cantidad', string='Subtotal', readonly=True, store=True)
 
 	@api.depends('price_unit', 'product_uom_qty')

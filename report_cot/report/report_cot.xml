@@ -61,12 +61,12 @@
                                 </td>
                             </tr>
                             <tr>
-                                <!--<td>
-                                    <t t-if="doc.entrega_tiempo"  >
+                                <td>
+                                    <t t-if="doc.tiempo_entrega"  >
                                         <strong>Tiempo entrega:</strong>
-                                        <p t-field="doc.entrega_tiempo"/>
+                                        <p t-field="doc.tiempo_entrega"/>
                                     </t>
-                                </td>-->
+                                </td>
                                 <td>
                                     <t t-if="doc.user_id"  >
                                         <strong>Asesor Comercial:</strong>
@@ -128,7 +128,7 @@
                                             <td><img t-if="line.product_id.image_medium" t-att-src="image_data_uri(line.product_id.image_medium)" style="width:100%;"/>
                                    </td>
                                             <td><span t-field="line.name"/></td>
-                                            <td><span t-field="line.entrega_tabla"/></td>
+                                            <td><span t-field="line.tiempo_entrega_tabla"/></td>
                                             <td class="text-right">
                                                 <span t-field="line.product_uom_qty"/>
                                                 <span t-field="line.product_uom" groups="uom.group_uom"/>
@@ -252,9 +252,9 @@
                             <ul class="list-inline mb4">
                                 <li t-if="doc.pago_importacion" class="list-inline-item">Pago importacion: <span t-field="doc.pago_importacion"/></li>
                             </ul>
-                            <!--<ul class="list-inline mb4">
-                                <li t-if="doc.entrega_tiempo" class="list-inline-item">Tiempo de entrega: <span t-field="doc.entrega_tiempo"/></li>
-                            </ul>-->
+                            <ul class="list-inline mb4">
+                                <li t-if="doc.tiempo_entrega" class="list-inline-item">Tiempo de entrega: <span t-field="doc.tiempo_entrega"/></li>
+                            </ul>
                              <ul class="list-inline mb4">
                                 <li t-if="doc.nota_venta" class="list-inline-item">Nota: <span t-field="doc.nota_venta"/></li>
                             </ul>
