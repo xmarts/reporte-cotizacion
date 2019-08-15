@@ -28,7 +28,7 @@ class Observaciones(models.Model):
 class ReportCot(models.Model):
 	_inherit = "sale.order"
 	
-	proyecto = fields.Char(string="Proyecto")
+	proyecto_sale = fields.Char(string="Proyecto", compute="_opportunity_in_proyecto")
 	cargo_envio = fields.Selection(selection=[
 		('type1', 'Envio por cobrar'),
 		('type2', 'Flete contrado'),
@@ -49,6 +49,14 @@ class ReportCot(models.Model):
 	pago_importacion = fields.Char(string="En los productos de importacion y fabricacion el pago sera")
 	nota_venta = fields.Char(string="Nota", default="Precios sujetos a cambio sin previo aviso")
 	comentarios = fields.Char(string="Comentarios")
+
+	@api.one
+	def _opportunity_in_proyecto(self):
+		for record in self:
+			if record.opportunity_id:
+				record.proyecto_sale = record.opportunity_id.name
+			else:
+				record.proyecto_sale = ""	
 
 #INHERIT A LA TABLA DE PEDIDO DE VENTA, PARA AGREGAR DOS NUEVAS COLUMNAS
 class ReportCot(models.Model):

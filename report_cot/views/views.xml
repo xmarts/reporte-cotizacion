@@ -35,7 +35,7 @@
         </xpath>
 
         <xpath expr="//field[@name='partner_id']" position="before">
-          <field name="proyecto"/>
+          <field name="proyecto_sale"/>
         </xpath>
         <xpath expr="//notebook/page/field[@name='order_line']/tree/field[@name='name']" position="after">
           <field name="tiempo_entrega_tabla" widget="many2many_tags" options="{'no_create_edit': True}"/>
