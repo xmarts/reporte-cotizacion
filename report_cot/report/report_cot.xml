@@ -61,12 +61,12 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <!--<td>
                                     <t t-if="doc.entrega_tiempo"  >
                                         <strong>Tiempo entrega:</strong>
                                         <p t-field="doc.entrega_tiempo"/>
                                     </t>
-                                </td>
+                                </td>-->
                                 <td>
                                     <t t-if="doc.user_id"  >
                                         <strong>Asesor Comercial:</strong>
@@ -252,9 +252,9 @@
                             <ul class="list-inline mb4">
                                 <li t-if="doc.pago_importacion" class="list-inline-item">Pago importacion: <span t-field="doc.pago_importacion"/></li>
                             </ul>
-                            <ul class="list-inline mb4">
+                            <!--<ul class="list-inline mb4">
                                 <li t-if="doc.entrega_tiempo" class="list-inline-item">Tiempo de entrega: <span t-field="doc.entrega_tiempo"/></li>
-                            </ul>
+                            </ul>-->
                              <ul class="list-inline mb4">
                                 <li t-if="doc.nota_venta" class="list-inline-item">Nota: <span t-field="doc.nota_venta"/></li>
                             </ul>
