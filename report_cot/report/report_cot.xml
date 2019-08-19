@@ -138,7 +138,7 @@
                                                 <span t-esc="', '.join(map(lambda x: (x.description or x.name), line.tax_id))"/>
                                             </td>-->
                                             <td class="text-right">
-                                                <span t-field="line.price_unit"/>
+                                                <span>$ </span><span t-field="line.price_unit"/>
                                             </td>
                                             
                                             <td class="text-right o_price_total">
