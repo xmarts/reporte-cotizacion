@@ -1,6 +1,6 @@
 <odoo>
   <data>
-
+    <!--  AGREGAMOS NUEVO CAMPOS A LA VISTA DE VENTAS -->
     <record id="fields_report_cot" model="ir.ui.view">
       <field name="name">Fields.Report.Cot</field>
       <field name="model">sale.order</field>
@@ -46,7 +46,12 @@
             <field name="comentarios"/>
           </page>
         </xpath>
+        <!--  MODIFICAMOS EN CAMPO PRICE_UNIT DE LA TABLA SALE_ORDER_LINE PARA AGREGAR UN WIDGET DE TIPO MONETARY  -->
+        <xpath expr="//notebook/page/field[@name='order_line']/tree/field[@name='price_unit']" position="attributes">
+          <attribute name="widget">monetary</attribute>
+        </xpath>
       </field>
     </record>
+    
   </data>
 </odoo>

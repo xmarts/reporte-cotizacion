@@ -54,9 +54,9 @@
                                     </t>
                                 </td>
                                 <td>
-                                    <t t-if="doc.proyecto" >
+                                    <t t-if="doc.proyecto_sale" >
                                         <strong style="font-size:23px;">Proyecto:</strong>
-                                        <p style="font-size:23px;" t-field="doc.proyecto"/>
+                                        <p style="font-size:23px;" t-field="doc.proyecto_sale"/>
                                     </t>
                                 </td>
                             </tr>
@@ -102,11 +102,11 @@
                                     <!-- TODO: remove in master -->
                                     <t t-set="colspan" t-value="9"/>
                                     <th class="text-left">Imagen</th>
-                                    <th class="text-left">Descripcion</th>
+                                    <th class="text-left">Descripción</th>
                                     <th class="text-left">Tiempo de entrega</th>
                                     <th class="text-right">Cantidad</th>
                                     <!--<th class="text-right">Impuesto</th>-->
-                                    <th class="text-right">Precio publico</th>
+                                    <th class="text-right">Precio público</th>
              
                                     <th class="text-right">
                                         <t groups="account.group_show_line_subtotals_tax_excluded">Precio distribuidor</t>

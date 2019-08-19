@@ -16,13 +16,13 @@ class Observaciones(models.Model):
 	name = fields.Char(string="Nombre")
 	description = fields.Text(string="Descripción de la observación")
 
-	@api.multi
+	'''@api.multi
 	def name_get(self):
 		result = []
 		for record in self:
 			record_name = str(record.name) + ': ' + str(record.description)
 			result.append((record.id, record_name))
-		return result
+		return result'''
 
 #INHERIT EN EL MODELO DE VENTAS, PARA AGREGAR NUEVOS CAMPOS AL MODELO
 class ReportCot(models.Model):
@@ -62,6 +62,7 @@ class ReportCot(models.Model):
 class ReportCot(models.Model):
 	_inherit = "sale.order.line"
 
+	#price_unit = fields.Float('Unit Price', required=True, digits=dp.get_precision('Product Price'), default=0.0)
 	tiempo_entrega_tabla = fields.Many2many('tiempo.entrega', string="Tiempo de entrega")
 	price_product_cantidad = fields.Monetary(compute='_compute_product_cantidad', string='Subtotal', readonly=True, store=True)
 
