@@ -30,7 +30,7 @@
         
         'views/views.xml',
         'views/templates.xml',
-        # 'report/report_cot.xml',
+        'report/report_cot.xml',
         'report/repor_pago.xml',
     ],
     # only loaded in demonstration mode
